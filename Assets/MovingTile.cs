@@ -3,12 +3,14 @@ using System.Collections;
 
 public class MovingTile : MonoBehaviour {
 
-    float velocity;
-    bool speedIncreased;
+    public Player playerObj;
+    public float velocity;
+    public bool speedIncreased;
     Vector3 delta;
 
     // Use this for initialization
     void Start () {
+
         velocity = 10;
         speedIncreased = false;
     }
@@ -20,8 +22,7 @@ public class MovingTile : MonoBehaviour {
 
         delta.y += velocity * Time.deltaTime;
 
-
-        if (Player.counter > 6 && !speedIncreased)
+        if (playerObj.counter > 6 && !speedIncreased)
         {
             velocity = 20;
             speedIncreased = true;

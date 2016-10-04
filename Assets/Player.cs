@@ -6,11 +6,12 @@ public class Player : MonoBehaviour {
 
     float speed;
     GameObject newInstance;
-    public static int counter = 0;
+    public int counter;
 
     // Use this for initialization
     void Start () {
         speed = 10;
+        counter = 0;
         //GameObject backGround = GameObject.Find("MyPlane");         
     }
 	
