@@ -21,16 +21,18 @@ public class MovingTile : MonoBehaviour {
         delta = transform.position;
 
         delta.y += velocity * Time.deltaTime;
-
-        if (playerObj.counter > 6 && !speedIncreased)
-        {
-            velocity = 20;
-            speedIncreased = true;
-        }
             
         transform.position = delta;
         if (transform.position.y >= 14) velocity = (0-velocity);
         else if (transform.position.y <= -14) velocity = Mathf.Abs(velocity);
+
+        if (playerObj.counter > 6 && !speedIncreased)
+        {
+            if(velocity < 0)    velocity = -20;
+            else if(velocity > 0) velocity = 20;
+
+            speedIncreased = true;
+        }
 
         Debug.Log("V : " + velocity + "total : " + velocity * Time.deltaTime);
 
