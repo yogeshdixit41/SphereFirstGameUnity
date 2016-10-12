@@ -34,7 +34,7 @@ public class MovingTile : MonoBehaviour {
             speedIncreased = true;
         }
 
-        Debug.Log("V : " + velocity + "total : " + velocity * Time.deltaTime);
+        //Debug.Log("V : " + velocity + "total : " + velocity * Time.deltaTime);
 
     }
 }

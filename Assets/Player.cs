@@ -36,7 +36,8 @@ public class Player : MonoBehaviour {
         {
             Debug.Log("Object Name: " + other.gameObject.name);
             newInstance = new GameObject();
-            randomVectorPosition = new Vector3(Random.Range(-30, 38), Random.Range(-13, 13), 19.5f);
+            randomVectorPosition = new Vector3(Random.Range(-14, 20), Random.Range(-14,12), 19.5f);
+            Debug.Log("Random: "+ randomVectorPosition);
             newInstance = (GameObject)Instantiate(other.gameObject, randomVectorPosition, Quaternion.identity);
             newInstance.name = "Sphere_1";
 
