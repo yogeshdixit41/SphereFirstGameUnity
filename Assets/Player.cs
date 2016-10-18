@@ -7,6 +7,7 @@ public class Player : MonoBehaviour {
     float speed;
     GameObject newInstance;
     public int counter;
+    public GameObject leftBorder, rightBorder, upBorder, downBorder;
 
     // Use this for initialization
     void Start () {
@@ -36,7 +37,7 @@ public class Player : MonoBehaviour {
         {
             Debug.Log("Object Name: " + other.gameObject.name);
             newInstance = new GameObject();
-            randomVectorPosition = new Vector3(Random.Range(-14, 20), Random.Range(-14,12), 19.5f);
+            randomVectorPosition = new Vector3(Random.Range((leftBorder.transform.position.x + 10), (rightBorder.transform.position.x - 10)), Random.Range((downBorder.transform.position.y + 10), (upBorder.transform.position.y - 10)), 19.5f);
             Debug.Log("Random: "+ randomVectorPosition);
             newInstance = (GameObject)Instantiate(other.gameObject, randomVectorPosition, Quaternion.identity);
             newInstance.name = "Sphere_1";
